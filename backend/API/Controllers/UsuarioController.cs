@@ -10,13 +10,16 @@ namespace API.Controllers
     [ApiController]
     public class UsuarioController : ControllerBase
     {
-        private readonly UsuarioService _usuarioService;
-        private readonly ILogger<UsuarioController> _logger;
-        public UsuarioController(UsuarioService usuarioService, ILogger<UsuarioController> logger)
-        {
-            _usuarioService = usuarioService;
-            _logger = logger;
-        }
+      
+            private readonly UsuarioService _usuarioService;
+            private readonly ILogger<UsuarioController> _logger;
+
+            public UsuarioController(UsuarioService usuarioService, ILogger<UsuarioController> logger)
+            {
+                _usuarioService = usuarioService;
+                _logger = logger;
+            }
+        
 
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Usuario>>> GetAll()

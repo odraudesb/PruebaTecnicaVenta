@@ -16,7 +16,8 @@ namespace Infraestructura.Repositorio
 
         public async Task<IEnumerable<Usuario>> GetAll() => await _context.Usuarios.ToListAsync();
 
-        public async Task<Usuario> GetById(int id) => await _context.Usuarios.FindAsync(usuario);
+        public async Task<Usuario> GetById(int id) => await _context.Usuarios.FindAsync(id);
+
 
         public async Task Add(Usuario usuario)
         {
