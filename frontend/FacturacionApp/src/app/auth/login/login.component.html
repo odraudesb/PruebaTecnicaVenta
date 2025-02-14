@@ -1,0 +1,23 @@
+<div class="container d-flex align-items-center justify-content-center vh-100">
+    <div class="row w-50">
+      <div class="col-md-6">
+        <img src="assets/login-image.jpg" class="img-fluid" alt="Login" />
+      </div>
+      <div class="col-md-6">
+        <h3>Iniciar Sesión</h3>
+        <form (ngSubmit)="onSubmit()">
+          <div class="mb-3">
+            <label class="form-label">Usuario</label>
+            <input type="text" class="form-control" [(ngModel)]="usuario" name="usuario" required />
+          </div>
+          <div class="mb-3">
+            <label class="form-label">Contraseña</label>
+            <input type="password" class="form-control" [(ngModel)]="password" name="password" required />
+          </div>
+          <button type="submit" class="btn btn-primary w-100">Ingresar</button>
+          <button mat-flat-button color="warn" (click)="registrarse()" style="margin-left:8px">Registrarse</button>
+        </form>
+      </div>
+    </div>
+  </div>
+  

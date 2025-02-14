@@ -66,7 +66,12 @@ namespace API.Controllers
                 }
 
                 await _usuarioService.AddUsuarioAsync(usuario);
-                return CreatedAtAction(nameof(GetById), new { id = usuario.UsuarioId }, usuario);
+                if (usuario.UsuarioId > 0)
+                {
+                    return CreatedAtAction(nameof(GetById), new { usuarioid = usuario.UsuarioId }, usuario);
+                }
+
+                return BadRequest("Error al registrar el usuario.");
             }
             catch (Exception ex)
             {
